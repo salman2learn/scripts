@@ -35,7 +35,9 @@ sudo mkdir /var/lib/mongodb
 sudo chown mongodb:root /var/lib/mongodb
 sudo chmod 775 /var/lib/mongodb
 
+
 echo "create the mongodb.conf file and copy to /etc"
+rm mongodb.conf
 cat >>"mongodb.conf" <<EOF
 # /etc/mongodb.conf
 # minimal config file (old style)
@@ -52,6 +54,7 @@ EOF
 cp mongodb.conf /etc
 
 echo "create systemd/service file and copy to /lib/systemd/system"
+rm mongodb.service
 cat >>"mongodb.service" <<EOF
 [Unit]
 Description=High-performance, schema-free document-oriented database
