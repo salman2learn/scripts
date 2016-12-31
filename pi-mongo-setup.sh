@@ -71,6 +71,7 @@ EOF
 cp mongodb.service /lib/systemd/system
 
 echo "Starting service"
+systemctl enable mongodb.service
 service mongodb start
 
 echo "Check status"
